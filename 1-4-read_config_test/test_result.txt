@@ -1,0 +1,14 @@
+仿真名称： GHAME3_Sim
+模块列表：
+config_nums = 2
+mod_nums = 5
+environment		= def,init,exec
+aerodynamics	= def,exec
+propulsion		= def,init,exec
+forces			= def,exec
+newton 			= def,init,exec
+模块1数据：
+print: ON
+print_step: 0.5
+int_step: 0.01
+end_time: 1000

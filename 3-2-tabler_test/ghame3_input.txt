@@ -1,0 +1,44 @@
+SIM_TITLE
+	GHAME3_Sim
+SIM_TITLE_END
+
+MODULES
+	config_nums = 2
+	mod_nums = 5
+	environment		= def,init,exec
+	aerodynamics	= def,exec
+	propulsion		= def,init,exec
+	forces			= def,exec	
+	newton 			= def,init,exec	
+MODULES_END
+
+MODULES_1
+	print		= ON	//ON, OFF
+	print_step	= 0.5
+	int_step	= 0.01
+	end_time	= 1000
+MODULES_END_1
+
+MODULES_2
+	//Initial conditions
+	dev_name= ghame3
+	lonx	= -80.55	//Vehicle longitude - deg  module newton
+	latx	= 28.43		//Vehicle latitude - deg  module newton
+	alt		= 3000		//Vehicle altitude - m  module newton
+	psivgx	= 90		//Vehicle heading angle - deg  module newton
+	thtvgx	= 0			//Vehicle flight path angle - deg  module newton
+	dvbe	= 250		//Vehicle speed - m/s  module newton
+	alphax	= 7			//Angle of attack - deg  module aerodynamics
+	phimvx	= 0			//Bank angle - deg  module aerodynamics	
+	aero_deck = ghame3_aero_deck.txt	//Aerodynamics
+	area	= 557.42    //Aerodynamic reference area - m^2  module aerodynamics	
+	prop_deck = ghame3_prop_deck.txt	//Propulsion
+	mprop	= 1			//'int' =0:none; =1:fixed-throttle; =2:auto-throttle  module propulsion
+	mass0	= 136077	//Initial gross mass - kg  module propulsion
+	fmass0	= 81646		//Initial fuel mass in stage - kg  module propulsion
+	acowl	= 27.87		//Cowl area of engine inlet - m^2  module propulsion
+	throttle	= 0.2	//Throttle controlling fuel/air ratio - ND  module propulsion
+	thrtl_idle	= 0.05	//Idle throttle - ND  module propulsion
+	thrtl_max	= 2		//Max throttle - ND  module propulsion
+MODULES_END_2
+

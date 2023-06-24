@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.15)
+
+# set the project name
+project(main)
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+Set(cpplist
+		main.cpp
+		str_proc.cpp
+		Test.cpp
+		TrimTest.cpp
+		)
+
+# add the executable
+add_executable(main ${cpplist})
